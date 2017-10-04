@@ -8,4 +8,8 @@ bot.on('/start', function (msg) {
   return bot.sendMessage(msg.from.id, "Hello world!");
 });
 
+bot.on('/hoi', function (msg) {
+  return bot.sendMessage(msg.from.id, "Hello");
+});
+
 bot.start();
