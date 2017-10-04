@@ -12,4 +12,19 @@ bot.on('/hoi', function (msg) {
   return bot.sendMessage(msg.from.id, "Hello");
 });
 
+bot.on('/wiebenjij', function (msg) {
+  return bot.sendMessage(msg.from.id, "I'm Cheeta_bot")
+});
+
+bot.on('/foto', (msg) => {
+    randnum = Math.floor(Math.random() * 2) + 1
+    if (randnum == 1){
+      img = ("images/cheeta-bot-marks.jpg")
+    }
+    if (randnum == 1){
+      img = ("images/robotic-cheetah.jpg")
+    }
+    return bot.sendPhoto(msg.from.id, img);
+});
+
 bot.start();
