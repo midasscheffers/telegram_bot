@@ -17,9 +17,9 @@ bot.on('/wiebenjij', function (msg) {
 });
 
 bot.on('/foto', (msg) => {
-    randnum = Math.floor(Math.random() * 2) + 1
-    if (randnum == 1){
-      img = ("images/cheeta-bot-marks.jpg")
+    randnum = Math.floor(Math.random() * 2)
+    if (randnum == 0){
+      img = ("images/cheetah-bot-marks.jpg")
     }
     if (randnum == 1){
       img = ("images/robotic-cheetah.jpg")
