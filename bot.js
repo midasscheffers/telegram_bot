@@ -8,15 +8,27 @@ bot.on('/start', function (msg) {
   return bot.sendMessage(msg.from.id, "Hello world!");
 });
 
-bot.on('/hoi', function (msg) {
+bot.on([/[Hh]oi/, /[Hh]ello/], function (msg) {
   return bot.sendMessage(msg.from.id, "Hello");
 });
 
-bot.on('/wiebenjij', function (msg) {
+bot.on([/[Ii]'m/, /[Ii] am/], function (msg) {
+  return bot.sendMessage(msg.from.id,"hoi " + msg.from.first_name + " I'm Cheeta_bot")
+});
+
+bot.on(/who are you/, function (msg) {
   return bot.sendMessage(msg.from.id, "I'm Cheeta_bot")
 });
 
-bot.on('/foto', (msg) => {
+bot.on(/how are you/, function (msg) {
+  return bot.sendMessage(msg.from.id, "I'm fine how are you")
+});
+
+bot.on([/I'm [good, fine]/], function (msg) {
+  return bot.sendMessage(msg.from.id, "Well nice")
+});
+
+bot.on(/photo/, (msg) => {
     randnum = Math.floor(Math.random() * 2)
     if (randnum == 0){
       img = ("images/cheetah-bot-marks.jpg")
@@ -24,7 +36,14 @@ bot.on('/foto', (msg) => {
     if (randnum == 1){
       img = ("images/robotic-cheetah.jpg")
     }
-    return bot.sendPhoto(msg.from.id, img);
+    while (true){
+      console.log("foto!!!!!!!!!!!!")
+      return bot.sendPhoto(msg.from.id, img);
+    }
+});
+
+bot.on(/.*[\.\?]$/, function (msg) {
+  return bot.sendMessage(msg.from.id, "what?")
 });
 
 bot.start();
