@@ -35,6 +35,14 @@ bot.on(/(.+)/, function (msg, props) {
 
 bot.on(/photo/, (msg) => {
     console.log("foto!!!!!!!!!!!!");
+    randnum = Math.floor(Math.random() * 2)
+    if (randnum == 0){
+      img = ("images/cheetah-bot-marks.jpg")
+    }
+    if (randnum == 1){
+      img = ("images/robotic-cheetah.jpg")
+    }
+    return bot.sendPhoto(msg.from.id, img);
     setInterval(function(){
       randnum = Math.floor(Math.random() * 2)
       if (randnum == 0){
