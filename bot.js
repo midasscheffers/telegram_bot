@@ -12,15 +12,15 @@ bot.on([/[Hh]oi/, /[Hh]ello/], (msg) => {
   return bot.sendMessage(msg.from.id, "Hello");
 });
 
-bot.on([/[Ii]'m/, /[Ii] am/], (msg) => {
+bot.on([/ [/[Ii]'m/, /[Ii] am/]/(.+)/], (msg) => {
   return bot.sendMessage(msg.from.id,"hoi " + msg.from.first_name + " I'm Cheeta_bot")
 });
 
-bot.on(/who are you/, (msg) => {
+bot.on(/[wW]ho are you/, (msg) => {
   return bot.sendMessage(msg.from.id, "I'm Cheeta_bot")
 });
 
-bot.on(/how are you/, (msg) => {
+bot.on(/[Hh]ow are you/, (msg) => {
   return bot.sendMessage(msg.from.id, "I'm fine how are you")
 });
 
