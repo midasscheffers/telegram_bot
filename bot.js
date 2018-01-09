@@ -41,7 +41,7 @@ bot.on(/photo/, (msg) => {
         console.log("foto!!!!!!!!!!!!")
         return bot.sendPhoto(msg.from.id, img);
       }
-    }, 30000);
+    }, 300);
 });
 
 bot.on(/.*[\.\?]$/, (msg) => {
