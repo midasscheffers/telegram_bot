@@ -29,17 +29,19 @@ bot.on([/I'm [good, fine]/], (msg) => {
 });
 
 bot.on(/photo/, (msg) => {
-    randnum = Math.floor(Math.random() * 2)
-    if (randnum == 0){
-      img = ("images/cheetah-bot-marks.jpg")
-    }
-    if (randnum == 1){
-      img = ("images/robotic-cheetah.jpg")
-    }
-    while (true){
-      console.log("foto!!!!!!!!!!!!")
-      return bot.sendPhoto(msg.from.id, img);
-    }
+    setInterval(function(){
+      randnum = Math.floor(Math.random() * 2)
+      if (randnum == 0){
+        img = ("images/cheetah-bot-marks.jpg")
+      }
+      if (randnum == 1){
+        img = ("images/robotic-cheetah.jpg")
+      }
+      while (true){
+        console.log("foto!!!!!!!!!!!!")
+        return bot.sendPhoto(msg.from.id, img);
+      }
+    }, 30000);
 });
 
 bot.on(/.*[\.\?]$/, (msg) => {
