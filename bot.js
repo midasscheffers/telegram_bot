@@ -4,27 +4,27 @@ const bot = new TeleBot({
     token: '431608141:AAEWYiY84IG-20YEY41ME1daHbo-1c87-fM' // Telegram Bot API token.
 });
 
-bot.on('/start', function (msg) {
+bot.on('/start', (msg) => {
   return bot.sendMessage(msg.from.id, "Hello world!");
 });
 
-bot.on([/[Hh]oi/, /[Hh]ello/], function (msg) {
+bot.on([/[Hh]oi/, /[Hh]ello/], (msg) => {
   return bot.sendMessage(msg.from.id, "Hello");
 });
 
-bot.on([/[Ii]'m/, /[Ii] am/], function (msg) {
+bot.on([/[Ii]'m/, /[Ii] am/], (msg) => {
   return bot.sendMessage(msg.from.id,"hoi " + msg.from.first_name + " I'm Cheeta_bot")
 });
 
-bot.on(/who are you/, function (msg) {
+bot.on(/who are you/, (msg) => {
   return bot.sendMessage(msg.from.id, "I'm Cheeta_bot")
 });
 
-bot.on(/how are you/, function (msg) {
+bot.on(/how are you/, (msg) => {
   return bot.sendMessage(msg.from.id, "I'm fine how are you")
 });
 
-bot.on([/I'm [good, fine]/], function (msg) {
+bot.on([/I'm [good, fine]/], (msg) => {
   return bot.sendMessage(msg.from.id, "Well nice")
 });
 
@@ -42,7 +42,7 @@ bot.on(/photo/, (msg) => {
     }
 });
 
-bot.on(/.*[\.\?]$/, function (msg) {
+bot.on(/.*[\.\?]$/, (msg) => {
   return bot.sendMessage(msg.from.id, "what?")
 });
 
