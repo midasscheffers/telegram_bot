@@ -28,6 +28,11 @@ bot.on([/I'm [good, fine]/], (msg) => {
   return bot.sendMessage(msg.from.id, "Well nice")
 });
 
+bot.on(/(.+)/, function (msg, props) {
+  lastmsg = props.match[1];
+  console.log(msg.from.first_name + " " + msg.from.last_name + ": " + lastmsg);
+});
+
 bot.on(/photo/, (msg) => {
     setInterval(function(){
       randnum = Math.floor(Math.random() * 2)
