@@ -12,7 +12,7 @@ bot.on([/[Hh]oi/, /[Hh]ello/], (msg) => {
   return bot.sendMessage(msg.from.id, "Hello");
 });
 
-bot.on([/ [/[Ii]'m/, /[Ii] am/]/(.+)/], (msg) => {
+bot.on([/[Ii]'m/, /[Ii] am/], (msg) => {
   return bot.sendMessage(msg.from.id,"hoi " + msg.from.first_name + " I'm Cheeta_bot")
 });
 
