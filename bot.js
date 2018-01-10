@@ -13,7 +13,7 @@ bot.on([/[Hh]oi/, /[Hh]ello/], (msg) => {
 });
 
 bot.on([/[Ii]'m/, /[Ii] am/], (msg) => {
-  return bot.sendMessage(msg.from.id,"hoi " + msg.from.first_name + " I'm Cheeta_bot")
+  return bot.sendMessage(msg.from.id,"hoi " + msg.from.first_name + " I'm Cheeta_bot 🐹🐰🐸🐱🐯🐨🐻🐷🐮🐧🐼🐘🐑🐴🐒🐵🐅🐟🐬🐳🐋🐄🐚🐏🐉")
 });
 
 bot.on(/[wW]ho are you/, (msg) => {
