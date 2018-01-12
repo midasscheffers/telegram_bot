@@ -14,7 +14,7 @@ bot.on('/start', (msg) => {
   return bot.sendMessage(msg.from.id, "Hello world!");
 });
 
-bot.on([/[Hh][AaOo][Ii]/, /[Hh]ello/], (msg) => {
+bot.on([/^[Hh][AaOo]*[Ii]/, /[Hh]ello/], (msg) => {
   bot.sendPhoto(msg.from.id, "images/hoi_cheetah.jpeg");
   return bot.sendMessage(msg.from.id, "Hello");
 });
