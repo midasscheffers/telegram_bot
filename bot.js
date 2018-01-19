@@ -4,10 +4,6 @@ const bot = new TeleBot({
     token: '431608141:AAEWYiY84IG-20YEY41ME1daHbo-1c87-fM' // Telegram Bot API token.
 });
 
-bot.on(/(.+)/, function (msg, props) {
-  lastmsg = props.match[1];
-  console.log(msg.from.first_name + " " + msg.from.last_name + ": " + lastmsg);
-});
 
 bot.on('/start', (msg) => {
   bot.sendPhoto(msg.from.id, "images/hoi_cheetah.jpeg");
@@ -37,7 +33,7 @@ bot.on(/[Hh]ow are you/, (msg) => {
   return bot.sendMessage(msg.from.id, "I'm fine how are you");
 });
 
-bot.on([/I'm [good, fine]/], (msg) => {
+bot.on([/[Ii]'?m [good, fine] .+?/], (msg) => {
   return bot.sendMessage(msg.from.id, "Well nice");
 });
 
@@ -56,6 +52,11 @@ bot.on(/photo/, (msg) => {
 
 bot.on(/.*[\.\?]$/, (msg) => {
   return bot.sendMessage(msg.from.id, "what?")
+});
+
+bot.on(/(.+)/, function (msg, props) {
+  lastmsg = props.match[1];
+  console.log(msg.from.first_name + " " + msg.from.last_name + ": " + lastmsg);
 });
 
 bot.start();
